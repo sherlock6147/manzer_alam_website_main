@@ -1,0 +1,11 @@
+{
+  "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "build": "tailwindcss -i manzer_alam_main_website/static/css/base/tailwind_src.css -o manzer_alam_main_website/static/css/base/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "tailwindcss": "^3.3.3"
+  }
+}

@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=manzer_alam_main_website
+POSTGRES_USER=cqAKmZQPovwfrQFlaSxPvILRxBAKdbWu
+POSTGRES_PASSWORD=DngsqSrHHChbQ7ifdGGa0wxD8Gm5pB01SFteiDjbp2F45gI3Gyb44cMmE6ru3rZC
