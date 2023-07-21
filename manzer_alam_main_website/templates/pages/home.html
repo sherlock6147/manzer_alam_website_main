@@ -1,1 +1,44 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}
+  Home
+{% endblock title %}
+{% block head %}
+  <!-- CSS files -->
+  <!-- <link rel="stylesheet" href="{% static 'base/css/home.css' %}" /> -->
+{% endblock head %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/base/home.css' %}" />
+  <header style="background-image: linear-gradient(90deg, rgba(45, 0, 48, 0.684), rgba(0, 11, 68, 0.84)), url('{% static 'images/base/ai-3d.jpg' %}')"
+          class="w-screen h-screen animation bg-cover grid place-items-center">
+    <div class="bg-blend-multiply backdrop-blur w-full h-full grid place-items-center">
+      <div class="grid lg:grid-cols-2 place-items-center my-auto container mx-auto px-4">
+        <div class="grid grid-cols-1 mx-auto w-full">
+          <div class="w-fit">
+            <h1 class="text-5xl text-center lg:text-[140px] uppercase text-transparent bg-clip-text bg-gradient-to-br from-zinc-50 to-fuchsia-300 font-gugi ">
+              Code Is My Craft
+            </h1>
+          </div>
+        </div>
+        <div class="flex flex-col max-w-[90vw] my-8 justify-center align-middle lg:pl-8 gap-2 rounded-lg">
+          <div class="bg-blend-multiply backdrop-blur-lg lg:pt-10 p-3 flex flex-col max-w-[90vw] border-2 border-white bg-slate-50/20 justify-center align-middle gap-2 rounded-lg">
+            <div class="text-lg lg:text-3xl px-3 font-semibold uppercase ">
+              <h1>Welcome! I am Md Manzer Alam</h1>
+            </div>
+            <div class="text-sm lg:text-lg uppercase px-3">
+              <h2>
+                Are You Looking to Hire a Full Stack Web Developer for Your Company or are you a fellow developer looking for my projects? Discover How I Can Help!
+              </h2>
+            </div>
+            <h2 class="text-center">COMING SOON</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="{% static 'base/js/changeTo.js' %}"></script>
+  <script src="{% static 'base/js/countdown.js' %}"></script>
+{% endblock content %}
