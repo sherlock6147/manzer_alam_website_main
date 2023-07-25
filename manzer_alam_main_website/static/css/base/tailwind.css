@@ -814,6 +814,14 @@ video {
   font-family: 'Gugi', mono, sans-serif;
 }
 
+.font-ubuntu-mono {
+  font-family: 'Ubuntu Mono', mono, sans-serif;
+}
+
+.font-raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -904,5 +912,14 @@ video {
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .lg\:uppercase {
+    text-transform: uppercase;
   }
 }
