@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.selected{
+    @apply font-bold underline underline-offset-2
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.project{
+    @apply w-full min-h-[350px] bg-purple-800/20 rounded-md border border-fuchsia-50/40 bg-cover flex flex-col px-4 py-2 justify-end max-w-xl;
+}
+
+.tag {
+    @apply px-5 py-1 rounded-full bg-fuchsia-100/10 font-bold font-ubuntu-mono uppercase hover:bg-slate-900/50 border border-fuchsia-50/20 text-sm;
+}

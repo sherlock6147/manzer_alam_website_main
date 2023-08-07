@@ -76,11 +76,14 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
+    "pagedown.apps.PagedownConfig",
+    "markdown_deux",
 ]
 
 LOCAL_APPS = [
     "manzer_alam_main_website.users",
     "base",
+    "works",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

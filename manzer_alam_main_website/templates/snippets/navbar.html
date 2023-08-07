@@ -16,6 +16,9 @@
         <li>
           <a href="{% url 'base:home' %}#" class="nav-item">Home</a>
         </li>
+        <li>
+          <a href="{% url 'base:home' %}#case-studies" class="nav-item">Case Studies</a>
+        </li>
         {% if user.is_authenticated %}
           <li>
             <a href="#" class="nav-item">Topics</a>
