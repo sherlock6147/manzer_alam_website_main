@@ -15,42 +15,40 @@
   <link rel="stylesheet" href="{% static 'css/base/home.css' %}" />
   <header style="background-image: linear-gradient(90deg, rgba(45, 0, 48, 0.684), rgba(0, 11, 68, 0.84)), url('{% static 'images/base/ai-3d.jpg' %}')"
           class="w-screen h-screen animation bg-cover grid place-items-center">
-    <div class="bg-blend-multiply backdrop-blur w-full h-full flex flex-col justify-center">
-      <div class="grid lg:grid-cols-2 place-items-center my-auto container mx-auto px-4">
-        <div class="grid grid-cols-1 mx-auto w-full">
-          <div class="w-fit">
-            <h1 class="text-5xl text-center lg:text-[140px] uppercase text-transparent bg-clip-text bg-gradient-to-br from-zinc-50 to-fuchsia-300 font-gugi ">
-              Code Is My Craft
+    <div class="bg-blend-multiply backdrop-blur w-full h-full flex flex-col justify-center px-6">
+      <div class="flex flex-col gap-4">
+        <div class="grid grid-cols-1 mx-auto w-full container">
+          <div class="w-full mx-auto">
+            <h1 class="text-5xl text-left lg:text-[100px] uppercase text-transparent bg-clip-text bg-gradient-to-br from-zinc-50 to-fuchsia-300 font-gugi hidden lg:block">
+              Code Is M<span class="word">y Craft</span>
+            </h1>
+            <h1 class="text-5xl text-center lg:text-[100px] uppercase text-transparent bg-clip-text bg-gradient-to-br from-zinc-50 to-fuchsia-300 font-gugi mx-auto lg:hidden">
+              Code Is
+              <br />
+              M<span class="word">y Craft</span>
             </h1>
           </div>
         </div>
-        <div class="flex flex-col max-w-[90vw] my-8 justify-center align-middle lg:pl-8 gap-2 rounded-lg">
-          <div class="bg-blend-multiply backdrop-blur-lg p-3 lg:py-8 flex flex-col max-w-[90vw] border-2 border-white bg-slate-50/20 justify-center align-middle gap-2 rounded-lg">
-            <div class="text-lg lg:text-3xl px-3 font-semibold uppercase font-gugi">
+        <div class="container mx-auto p-3">
+          <div class="flex flex-col container justify-center align-middle gap-2 ">
+            <div class="text-lg lg:text-3xl font-semibold uppercase font-ubuntu-mono">
               <h1>Welcome! I am Md Manzer Alam</h1>
             </div>
-            <div class="text-sm lg:text-lg  px-3 font-raleway">
+            <div class="text-sm lg:text-lg font-raleway">
               <h2>
                 Are You Looking to Hire a <b>Full Stack Web Developer</b> for Your Company or are you a fellow developer looking for my <b>work</b>? <b>Discover How I Can Help!</b>
               </h2>
             </div>
+            <ul class="flex flex-row flex-wrap lg:flex-row gap-4 justify-start my-2 uppercase ">
+              <!-- <a class="tag-2" href="{% url 'base:home' %}#case-studies">Statistics</a></li> -->
+              <!-- <a class="tag-2" href="{% url 'base:home' %}#case-studies">Works</a></li> -->
+              <li class="tag-2">
+                <a href="{% url 'base:home' %}#case-studies">Case Studies</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <a class="scroll-down mx-auto my-4 font-gugi uppercase md:text-xl flex flex-row gap-3"
-         href="{% url 'base:home' %}#case-studies">
-        <h2>Case Studies</h2>
-        <div class="h-full my-auto flex flex-col">
-          <svg xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               stroke-width="1.5"
-               stroke="currentColor"
-               class="w-6 h-6 ">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
-          </svg>
-        </div>
-      </a>
     </div>
   </header>
   <!-- Case Studies -->
@@ -60,65 +58,48 @@
           id="case-studies">Case Studies</h1>
     </div>
     <div class="mx-4 lg:mx-auto lg:w-4/5 font-raleway flex flex-col justify-between py-3">
-      <div class="flex-row flex justify-start gap-3 lg:gap-8">
+      <!-- <div class="flex-row flex justify-start gap-3 lg:gap-8">
         <h3 class="uppercase tracking-widest text-sm lg:text-lg font-bold">Sort By:</h3>
-        <button>
-          <svg xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 24 24"
-               stroke-width="1.5"
-               stroke="currentColor"
-               class="w-4 h-4">
+        <button onclick="toggleOrder()">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
           </svg>
         </button>
-      </div>
+      </div> -->
       <ul class="flex flex-row justify-start w-full gap-2 lg:gap-4 mt-3 mb-1 uppercase tracking-widest text-sm lg:text-lg font-medium">
-        <li class="selected">Importance</li>
-        <li>Name</li>
-        <li>Views</li>
+        <button class="selected cursor-pointer uppercase"
+                onclick="changeTo('importance')"
+                id="importance-btn">Importance</button>
+        <button class="cursor-pointer uppercase"
+                onclick="changeTo('name')"
+                id="name-btn">Name</button>
+        <button class="cursor-pointer uppercase"
+                onclick="changeTo('views')"
+                id="views-btn">Views</button>
       </ul>
     </div>
     {% if not favCaseStudies %}
       <h2 class="text-center text-xl">No case studies added.</h2>
     {% else %}
-      <ul class="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center max-w-[90%] lg:max-w-[80%] gap-8 lg:gap-4 w-full mt-4 mb-8 lg:my-8">
+      <ul class="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center max-w-[90%] lg:max-w-[80%] gap-8 lg:gap-4 w-full mt-4 mb-8 lg:my-8"
+          id="favCaseStudies">
         {% for study in favCaseStudies %}
-          {% if not study.heroImage %}
-            <li class="project"
-                style="background-image: linear-gradient(90deg, rgba(45, 0, 48, 0.684), rgba(0, 11, 68, 0.84)), url('{% static 'images/base/ai-3d.jpg' %}')">
-              <h2 class="text-lg lg:text-xl font-bold font-gugi">{{ study.title }}</h2>
-              <p>{{ study.description|markdown }}</p>
-              <ul class="flex flex-row w-full flex-wrap gap-3 my-2">
-                <a class="tag" href="#">Flask</a>
-                <a class="tag" href="#">Python</a>
-                <a class="tag" href="#">Javascript</a>
-                <a class="tag" href="#">Flask</a>
-                <a class="tag" href="#">Python</a>
-              </ul>
-              <ul class="flex flex-row gap-3 w-full flex-wrap my-2">
-                {% if study.views %}<li class="text-lg font-black font-ubuntu-mono uppercase">Views:{{ study.views }}</li>{% endif %}
-              </ul>
-            </li>
-          {% else %}
-            <li class="project"
-                style="background-image: linear-gradient(90deg, rgba(45, 0, 48, 0.684), rgba(0, 11, 68, 0.84)), url('{{ study.heroImage.url }}')">
-              <h2 class="text-lg lg:text-xl font-bold font-gugi">{{ study.title }}</h2>
-              <p>{{ study.description|markdown }}</p>
-              <ul class="flex flex-row w-full flex-wrap gap-3 my-2">
-                <a class="tag" href="#">Flask</a>
-                <a class="tag" href="#">Python</a>
-                <a class="tag" href="#">Javascript</a>
-                <a class="tag" href="#">Flask</a>
-                <a class="tag" href="#">Python</a>
-              </ul>
-              <ul class="flex flex-row gap-3 w-full flex-wrap my-2">
-                {% if study.views %}<li class="text-lg font-black font-ubuntu-mono uppercase">Views:{{ study.views }}</li>{% endif %}
-              </ul>
-            </li>
-          {% endif %}
+          {% include 'snippets/case_study_card.html' %}
+        {% endfor %}
+      </ul>
+      <ul class="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center max-w-[90%] lg:max-w-[80%] gap-8 lg:gap-4 w-full mt-4 mb-8 lg:my-8"
+          id="favCaseStudiesName">
+        {% for study in favCaseStudiesName %}
+          {% include 'snippets/case_study_card.html' %}
+        {% endfor %}
+      </ul>
+      <ul class="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 place-items-center max-w-[90%] lg:max-w-[80%] gap-8 lg:gap-4 w-full mt-4 mb-8 lg:my-8"
+          id="favCaseStudiesViews">
+        {% for study in favCaseStudiesViews %}
+          {% include 'snippets/case_study_card.html' %}
         {% endfor %}
       </ul>
     {% endif %}
   </div>
+  <script src="{% static 'js/base/home.js' %}"></script>
 {% endblock content %}

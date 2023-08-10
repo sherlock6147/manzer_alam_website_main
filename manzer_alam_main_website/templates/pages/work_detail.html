@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load markdown_deux_tags %}
+{% load socialaccount %}
+
+{% block title %}
+  {{ work.title }}
+{% endblock title %}
+{% block head %}
+  <!-- CSS files -->
+  <!-- <link rel="stylesheet" href="{% static 'base/css/home.css' %}" /> -->
+{% endblock head %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/base/home.css' %}" />
+  <div class="w-screen text-fuchsia-50 px-6">
+    <div class="max-w-screen-xl mx-auto pt-20 flex flex-col gap-4">
+      {% if not work.heroImage %}
+        <div class="w-full min-h-[250px] bg-purple-800/20 rounded-md border border-fuchsia-50/40 bg-cover flex flex-col px-4 py-2 justify-end bg-center"
+             style="background-image: linear-gradient(90deg, rgba(45, 0, 48, 0.684), rgba(0, 11, 68, 0.84)), url('{% static 'images/base/ai-3d.jpg' %}')">
+          {% if work.isCaseStudy %}
+            <h2 class="text-xl font-raleway font-base tracking-widest uppercase">Case Study</h2>
+            <h1 class="text-3xl font-raleway font-bold">{{ work.title }}</h1>
+          {% else %}
+            <h2 class="text-xl font-raleway font-base tracking-widest uppercase">Project</h2>
+            <h1 class="text-3xl font-raleway font-bold">Project: {{ work.title }}</h1>
+          {% endif %}
+          <h3 class="text-lg">{{ work.description|markdown }}</h3>
+        </div>
+      {% else %}
+        <div class="w-full min-h-[250px] bg-purple-800/20 rounded-md border border-fuchsia-50/40 bg-cover flex flex-col px-4 py-2 justify-end bg-center"
+             style="background-image: linear-gradient(90deg, rgba(45, 0, 48, 0.684), rgba(0, 11, 68, 0.84)), url('{{ work.heroImage.url }}')">
+          {% if work.isCaseStudy %}
+            <h2 class="text-xl font-raleway font-base tracking-widest uppercase">Case Study</h2>
+            <h1 class="text-3xl font-raleway font-bold">{{ work.title }}</h1>
+          {% else %}
+            <h2 class="text-xl font-raleway font-base tracking-widest uppercase">Project</h2>
+            <h1 class="text-3xl font-raleway font-bold">Project: {{ work.title }}</h1>
+          {% endif %}
+          <h3 class="text-lg">{{ work.description|markdown }}</h3>
+        </div>
+      {% endif %}
+      <!-- <ul class="flex flex-row w-full flex-wrap gap-3 ">
+            <a class="tag" href="#">Flask</a>
+            <a class="tag" href="#">Python</a>
+            <a class="tag" href="#">Javascript</a>
+            <a class="tag" href="#">Flask</a>
+            <a class="tag" href="#">Python</a>
+        </ul> -->
+      <div class="content">{{ work.content|markdown }}</div>
+    </div>
+  </div>
+{% endblock content %}

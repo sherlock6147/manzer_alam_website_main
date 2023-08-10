@@ -15,5 +15,34 @@ html{
 }
 
 .tag {
-    @apply px-5 py-1 rounded-full bg-fuchsia-100/10 font-bold font-ubuntu-mono uppercase hover:bg-slate-900/50 border border-fuchsia-50/20 text-sm;
+    @apply px-5 py-1 rounded-full bg-fuchsia-100/10 font-bold font-ubuntu-mono uppercase hover:bg-slate-900/50 border border-fuchsia-50/20 text-sm w-fit;
+}
+
+.tag-2 {
+    @apply px-5 py-1 rounded-sm hover:bg-fuchsia-100/10 font-bold font-ubuntu-mono uppercase bg-slate-900/50 border border-fuchsia-50/20 text-sm lg:text-base w-fit;
+}
+
+.tooltip{
+    @apply absolute hidden group-hover:flex -left-5 -top-2 -translate-y-full w-fit px-2 py-1 bg-indigo-700 rounded-lg text-center text-white text-sm after:content-[''] after:absolute after:left-1/2 after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-gray-700;
+}
+
+.content {
+    @apply flex flex-col justify-center gap-2 w-full lg:text-lg text-slate-50 rounded-md max-w-screen-xl mx-auto mb-12;
+}
+
+.content h1{
+    @apply text-xl font-bold;
+}
+
+.content h2{
+    @apply text-lg font-semibold;
+}
+
+.content p{
+    @apply text-base;
+}
+
+
+.content img{
+    @apply mx-auto object-cover max-h-52  w-full lg:w-[70%] border border-white rounded-md my-3;
 }
