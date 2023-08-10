@@ -30,13 +30,14 @@
     ================================================== -->
     {# Placed at the top of the document so pages load faster with defer #}
     {% block javascript %}
+      <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
       <!-- Bootstrap JS -->
       <!-- Your stuff: Third-party javascript libraries go here -->
       <!-- place project specific Javascript in this file -->
       <script defer src="{% static 'js/project.js' %}"></script>
     {% endblock javascript %}
   </head>
-  <body class="bg-gray-950 min-h-screen text-gray-100 w-screen overflow-x-hidden">
+  <body class="bg-gradient-to-tl from-stone-900 to-blue-900/80 min-h-screen text-gray-100 w-screen overflow-x-hidden">
     {% include 'snippets/navbar.html' %}
     <div class="container">
       {% if messages %}

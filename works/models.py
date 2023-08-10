@@ -15,6 +15,8 @@ class Work(models.Model):
     importanceScore = models.IntegerField(default=1)
     views = models.IntegerField(blank=True, null=True, default=0)
     heroImage = models.ImageField("Hero Image", upload_to="heroImages/", blank=True, null=True)
+    linkToCode = models.URLField(blank=True, null=True)
+    linkToDeployment = models.URLField(blank=True, null=True)
 
     def __str__(self) -> str:
         p_status = "NOT PUBLISHED"
